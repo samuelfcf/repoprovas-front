@@ -2,7 +2,9 @@ import React from 'react';
 
 const App = () => {
   return (
-    <h1>RepoProvas</h1>
+    <div>
+      <h1>olá</h1>
+    </div>
   );
 };
 
