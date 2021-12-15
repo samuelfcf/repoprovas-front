@@ -1,10 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import GlobalStyle from './styles/GlobalStyle';
+import Pages from './Pages';
 
 const App = () => {
   return (
-    <div>
-      <h1>olá</h1>
-    </div>
+    <Router>
+      <GlobalStyle />
+      <Pages />
+    </Router>
   );
 };
 
