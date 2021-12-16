@@ -77,10 +77,11 @@ const Register = () => {
     const body = {
       name,
       category,
-      subjectId: 1,
+      subjectId: subjectBody?.id,
       professorId: professorBody?.id,
       url,
     }
+
     return postExam(body)
       .then(() => {
         modalSuccess('Prova cadastrada com sucesso!');
