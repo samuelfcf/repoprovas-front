@@ -1,30 +1,16 @@
+/* eslint-disable arrow-body-style */
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
 import PageStyle from '../../styles/PageStyle';
-import { getAllProfessors, getAllSubjects } from '../../services/api';
-import { modalError, modalWarning } from '../../utils/handleCatchErrors';
+import { getAllProfessors, getAllSubjects, postExam } from '../../services/api';
+import { modalError, modalWarning, modalSuccess } from '../../utils/modals';
+import { Exam } from '../../types/Exam';
+import Professor from '../../types/Professor';
+import Subject from '../../types/Subject';
 
-interface Subject {
-  id: number;
-  name: string;
-  period: string;
-  quantity: number;
-}
-
-interface Professor {
-  id: number;
-  name: string;
-  subject: Subject;
-}
-
-interface Exam {
-  name: string;
-  category: string;
-  subject: string;
-  professor: string;
-  url: string;
-}
 
 const Register = () => {
   const categories = ['P1', 'P2', 'P3', 'Optativas'];
@@ -85,9 +71,24 @@ const Register = () => {
       return modalWarning('Preencha todos os campos!');
     }
 
-    const body = { ...inputFields };
-    console.log(body);
-    return 0;
+    const subjectBody = subjects.find(s => s.name === subject)
+    const professorBody = professors.find(p => p.name === professor)
+
+    const body = {
+      name,
+      category,
+      subjectId: 1,
+      professorId: professorBody?.id,
+      url,
+    }
+    return postExam(body)
+      .then(() => {
+        modalSuccess('Prova cadastrada com sucesso!');
+      })
+      .catch(() => {
+        modalError('Erro ao cadastrar prova, tente novamente!');
+      });
+    return 0
   };
 
   return (

@@ -14,4 +14,11 @@ const modalWarning = async (title: string) => {
   });
 };
 
-export { modalError, modalWarning };
+const modalSuccess = async (title: string) => {
+  await Swal.fire({
+    icon: 'success',
+    title
+  });
+};
+
+export { modalError, modalWarning, modalSuccess };
