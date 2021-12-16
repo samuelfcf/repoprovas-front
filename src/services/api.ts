@@ -6,7 +6,7 @@ interface ExamBody extends Omit<Exam, 'subject' | 'professor'> {
   professorId: number | undefined;
 }
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const getAllSubjects = async () => {
   const promise = await axios.get(`${BASE_URL}/subjects`);
