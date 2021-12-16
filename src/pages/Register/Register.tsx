@@ -89,7 +89,6 @@ const Register = () => {
       .catch(() => {
         modalError('Erro ao cadastrar prova, tente novamente!');
       });
-    return 0
   };
 
   return (
