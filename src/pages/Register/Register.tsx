@@ -54,7 +54,7 @@ const Register = () => {
     setInputFields({ ...inputFields, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.ChangeEvent | any) => {
+  const handleSubmit = async (e: React.ChangeEvent | any) => {
     e.preventDefault();
 
     const { name, category, subject, professor, url } = inputFields;

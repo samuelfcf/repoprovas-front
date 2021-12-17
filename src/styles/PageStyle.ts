@@ -8,4 +8,12 @@ const PageStyle = styled.div`
   gap: 50px;
 `;
 
+const ButtonArea = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+`;
+
+export { ButtonArea };
+
 export default PageStyle;
