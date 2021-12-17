@@ -15,7 +15,9 @@ const Home = () => {
         <button type="submit" onClick={() => navigate('/register')}>
           Cadastrar Prova
         </button>
-        <button type="submit">Visualizar Provas</button>
+        <button type="submit" onClick={() => navigate('/views')}>
+          Visualizar Provas
+        </button>
       </S.ButtonArea>
     </PageStyle>
   );
