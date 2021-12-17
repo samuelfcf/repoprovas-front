@@ -1,20 +1,32 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { Exam } from '../types/Exam';
+import Subject from '../types/Subject';
 
 interface Props {
   name: string;
-  examsQuantity: number;
+  subject: Subject;
+  exams: Exam[];
 }
 
-const ProfessorContainer = ({ name, examsQuantity }: Props) => {
+const ProfessorContainer = ({ name, subject, exams }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <li>
+    <Li
+      onClick={() => {
+        navigate('/exams', {
+          state: { exams, subject: subject.name, professor: name }
+        });
+      }}
+    >
       <Container>
         <p>Prof: {name}</p>
-        <p>Quantidade de provas: {examsQuantity}</p>
+        <p>Quantidade de provas: {exams.length}</p>
       </Container>
-    </li>
+    </Li>
   );
 };
 

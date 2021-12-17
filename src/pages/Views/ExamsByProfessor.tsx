@@ -19,9 +19,13 @@ const ExamsByProfessor = () => {
     <PageStyle>
       <h1>Professores</h1>
       <Ul>
-        {professors.map((p) => {
+        {professors.map((professor) => {
           return (
-            <ProfessorContainer name={p.name} examsQuantity={p.exams.length} />
+            <ProfessorContainer
+              name={professor.name}
+              subject={professor.subject}
+              exams={professor.exams}
+            />
           );
         })}
       </Ul>
