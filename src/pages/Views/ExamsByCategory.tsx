@@ -13,11 +13,11 @@ const ExamsByCategory = () => {
 
   const renderExams = (category: string) => {
     const renderArray: Exam[] = [];
-    const { exams, subject, professor } = state;
+    const { exams, subject, professors } = state;
 
-    exams.forEach((e: Exam) => {
-      if (e.category.toLowerCase() === category.toLowerCase()) {
-        renderArray.push(e);
+    exams.forEach((exam: Exam) => {
+      if (exam.category.toLowerCase() === category.toLowerCase()) {
+        renderArray.push(exam);
       }
     });
 
@@ -27,7 +27,9 @@ const ExamsByCategory = () => {
           key={index}
           exam={exam}
           subject={subject}
-          professor={professor}
+          professor={
+            professors.length === 0 ? professors[0] : professors[index]
+          }
         />
       );
     });

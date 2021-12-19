@@ -14,7 +14,7 @@ const Views = () => {
         <button type="submit" onClick={() => navigate('/views/by-professor')}>
           Professor
         </button>
-        <button type="submit" onClick={() => navigate('/views')}>
+        <button type="submit" onClick={() => navigate('/views/by-subject')}>
           Disciplina
         </button>
       </ButtonArea>

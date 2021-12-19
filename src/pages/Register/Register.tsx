@@ -13,7 +13,7 @@ import Subject from '../../types/Subject';
 
 
 const Register = () => {
-  const categories = ['P1', 'P2', 'P3', 'Optativas'];
+  const categories = ['P1', 'P2', 'P3', 'Final'];
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [professors, setProfessors] = useState<Professor[]>([]);
   const [inputFields, setInputFields] = useState<Exam>({
@@ -115,7 +115,7 @@ const Register = () => {
           <option selected>--- Categorias ---</option>
           {categories.map((category, index) => {
             return (
-              <option key={index} value={category}>
+              <option key={index} value={category.toUpperCase()}>
                 {category}
               </option>
             );
