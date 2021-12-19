@@ -1,8 +1,10 @@
+import { Exam } from './Exam';
+
 interface Subject {
   id: number;
   name: string;
   period: string;
-  quantity: number;
+  exams: Exam[];
 }
 
 export default Subject;

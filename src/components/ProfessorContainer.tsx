@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import { Exam } from '../types/Exam';
 import Subject from '../types/Subject';
+import { Li, Container } from '../styles/PageStyle';
 
 interface Props {
   name: string;
@@ -18,7 +17,7 @@ const ProfessorContainer = ({ name, subject, exams }: Props) => {
     <Li
       onClick={() => {
         navigate('/exams', {
-          state: { exams, subject: subject.name, professor: name }
+          state: { exams, subject: subject.name, professors: [name] }
         });
       }}
     >
@@ -29,18 +28,5 @@ const ProfessorContainer = ({ name, subject, exams }: Props) => {
     </Li>
   );
 };
-
-const Li = styled.li``;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  padding-left: 20px;
-  background-color: red;
-  width: 200px;
-  height: 100px;
-`;
 
 export default ProfessorContainer;
