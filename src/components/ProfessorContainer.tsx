@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Exam } from '../types/Exam';
 import Subject from '../types/Subject';
-import { Container } from '../styles/PageStyle';
+import { Container, Title } from '../styles/PageStyle';
 
 interface Props {
   name: string;
@@ -21,7 +21,9 @@ const ProfessorContainer = ({ name, subject, exams }: Props) => {
         });
       }}
     >
-      <p>Prof: {name}</p>
+      <p>
+        Prof: <Title>{name}</Title>
+      </p>
       <p>Quantidade de provas: {exams.length}</p>
     </Container>
   );

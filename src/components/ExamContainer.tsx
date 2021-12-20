@@ -15,14 +15,18 @@ const ExamContainer = ({ exam, subject, professor }: Props) => {
   return (
     <Container>
       <div>
-        <p>Nome: {exam.name}</p>
+        <p>
+          Título: <Title>{exam.name}</Title>
+        </p>
         <p>Disciplina: {subject}</p>
         <p>Professor: {professor}</p>
       </div>
 
-      <a href={href} target="_blank" rel="noreferrer">
-        Acessar prova
-      </a>
+      <aside>
+        <a href={href} target="_blank" rel="noreferrer">
+          Acessar prova
+        </a>
+      </aside>
     </Container>
   );
 };
@@ -41,14 +45,22 @@ const Container = styled.div`
     gap: 10px;
   }
 
-  a {
-    color: black;
-    height: 20px;
+  aside {
+    a {
+      color: black;
+      height: 20px;
+      font-weight: 600;
 
-    &:hover {
-      color: white;
+      &:hover {
+        color: white;
+      }
     }
   }
+`;
+
+const Title = styled.h1`
+  font-weight: 600;
+  display: inline;
 `;
 
 export default ExamContainer;

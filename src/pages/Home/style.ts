@@ -28,19 +28,4 @@ const Button = styled.button`
   }
 `;
 
-const Header = styled.header`
-  background-color: darkblue;
-  height: 100px;
-  width: 100vw;
-  text-align: center;
-
-  h1 {
-    color: #fff;
-    padding-top: 30px;
-    font-weight: 700;
-    font-size: 24px;
-    font-family: 'Lato', sans-serif;
-  }
-`;
-
-export { Header, Button, ButtonArea };
+export { Button, ButtonArea };

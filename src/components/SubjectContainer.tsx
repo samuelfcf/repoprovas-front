@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container } from '../styles/PageStyle';
+import { Container, Title } from '../styles/PageStyle';
 import Subject from '../types/Subject';
 
 interface Props {
@@ -29,7 +29,9 @@ const SubjectContainer = ({ subject }: Props) => {
         });
       }}
     >
-      <p>Matéria: {`${subject.name}`}</p>
+      <p>
+        Matéria: <Title>{`${subject.name}`}</Title>
+      </p>
       <p>Quantidade de provas: {`${subject.exams.length}`}</p>
     </Container>
   );
