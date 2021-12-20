@@ -3,7 +3,7 @@ import * as S from './style';
 import { Button } from '../../styles/PageStyle';
 import { getAllProfessors, getAllSubjects, postExam } from '../../services/api';
 import { modalError, modalWarning, modalSuccess } from '../../utils/modals';
-import { Exam } from '../../types/Exam';
+import { ExamForm } from '../../types/Exam';
 import Professor from '../../types/Professor';
 import Subject from '../../types/Subject';
 
@@ -11,7 +11,7 @@ const Register = () => {
   const categories = ['P1', 'P2', 'P3', 'Final'];
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [professors, setProfessors] = useState<Professor[]>([]);
-  const [inputFields, setInputFields] = useState<Exam>({
+  const [inputFields, setInputFields] = useState<ExamForm>({
     name: '',
     category: '',
     subject: '',

@@ -21,14 +21,16 @@ const ExamsByCategory = () => {
     });
 
     return renderArray.map((exam: Exam, index: number) => {
+      const professor = professors.filter((p: string) => {
+        return p === exam.professor.name;
+      });
+
       return (
         <ExamContainer
           key={index}
           exam={exam}
           subject={subject}
-          professor={
-            professors.length === 1 ? professors[0] : professors[index]
-          }
+          professor={professor}
         />
       );
     });

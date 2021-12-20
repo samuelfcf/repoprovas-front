@@ -21,7 +21,11 @@ const SubjectContainer = ({ subject }: Props) => {
     <Container
       onClick={() => {
         navigate('/exams', {
-          state: { exams, subject: subject.name, professors }
+          state: {
+            exams,
+            subject: subject.name,
+            professors: [...new Set(professors)]
+          }
         });
       }}
     >
