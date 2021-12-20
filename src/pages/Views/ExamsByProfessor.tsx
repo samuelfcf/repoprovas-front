@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getAllProfessors } from '../../services/api';
 import Professor from '../../types/Professor';
 import ProfessorContainer from '../../components/ProfessorContainer';
-import PageStyle, { Ul, Text, Header } from '../../styles/PageStyle';
+import PageStyle, { Ul, Header } from '../../styles/PageStyle';
 
 const ExamsByProfessor = () => {
   const [professors, setProfessors] = useState<Professor[]>([]);
@@ -16,7 +17,10 @@ const ExamsByProfessor = () => {
   return (
     <PageStyle>
       <Header>
-        <Text>Professores</Text>
+        <h1>Professores</h1>
+        <Link to="/">
+          <h2>Voltar para home</h2>
+        </Link>
       </Header>
 
       <Ul>

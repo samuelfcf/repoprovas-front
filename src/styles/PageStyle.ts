@@ -21,6 +21,12 @@ const Header = styled.header`
     font-size: 24px;
     font-family: 'Lato', sans-serif;
   }
+
+  h2 {
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+  }
 `;
 
 const Text = styled.h1`

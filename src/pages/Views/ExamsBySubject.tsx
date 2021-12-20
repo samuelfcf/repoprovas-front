@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getAllSubjects } from '../../services/api';
 import Subject from '../../types/Subject';
 import PageStyle, { Ul, Text, Header } from '../../styles/PageStyle';
@@ -32,6 +33,9 @@ const ExamsBySubject = () => {
     <PageStyle>
       <Header>
         <Text>Períodos</Text>
+        <Link to="/">
+          <h2>Voltar para home</h2>
+        </Link>
       </Header>
 
       {periods.map((p: string) => {

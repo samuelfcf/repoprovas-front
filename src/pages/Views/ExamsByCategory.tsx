@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled from 'styled-components';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ExamContainer from '../../components/ExamContainer';
 import PageStyle, { Text, Header } from '../../styles/PageStyle';
 import { Exam } from '../../types/Exam';
@@ -40,6 +40,9 @@ const ExamsByCategory = () => {
     <PageStyle>
       <Header>
         <Text>Provas</Text>
+        <Link to="/">
+          <h2>Voltar para home</h2>
+        </Link>
       </Header>
 
       <Ul>
