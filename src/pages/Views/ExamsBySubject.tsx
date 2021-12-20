@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllSubjects } from '../../services/api';
 import Subject from '../../types/Subject';
-import PageStyle, { Ul } from '../../styles/PageStyle';
+import PageStyle, { Ul, Text } from '../../styles/PageStyle';
 import SubjectContainer from '../../components/SubjectContainer';
 
 const ExamsBySubject = () => {
@@ -30,18 +30,16 @@ const ExamsBySubject = () => {
 
   return (
     <PageStyle>
-      <h1>Períodos</h1>
+      <Text>Períodos</Text>
 
-      <div>
-        {periods.map((p: string) => {
-          return (
-            <>
-              <p>{p}</p>
-              {renderSubjects(p)}
-            </>
-          );
-        })}
-      </div>
+      {periods.map((p: string) => {
+        return (
+          <Ul>
+            <Text>{!p.includes('Optativas') ? `${p} Semestre` : p}</Text>
+            {renderSubjects(p)}
+          </Ul>
+        );
+      })}
     </PageStyle>
   );
 };

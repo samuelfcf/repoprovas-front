@@ -25,6 +25,8 @@
     "prettier"
   ],
   "rules": {
+    "react/no-array-index-key": "off",
+    "no-nested-ternary": "off",
     "no-use-before-define": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-use-before-define": [

@@ -1,22 +1,17 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable prettier/prettier */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
-import PageStyle from '../../styles/PageStyle';
+import { Button } from '../../styles/PageStyle';
 import { getAllProfessors, getAllSubjects, postExam } from '../../services/api';
 import { modalError, modalWarning, modalSuccess } from '../../utils/modals';
-import { Exam } from '../../types/Exam';
+import { ExamForm } from '../../types/Exam';
 import Professor from '../../types/Professor';
 import Subject from '../../types/Subject';
-
 
 const Register = () => {
   const categories = ['P1', 'P2', 'P3', 'Final'];
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [professors, setProfessors] = useState<Professor[]>([]);
-  const [inputFields, setInputFields] = useState<Exam>({
+  const [inputFields, setInputFields] = useState<ExamForm>({
     name: '',
     category: '',
     subject: '',
@@ -71,16 +66,20 @@ const Register = () => {
       return modalWarning('Preencha todos os campos!');
     }
 
-    const subjectBody = subjects.find(s => s.name === subject)
-    const professorBody = professors.find(p => p.name === professor)
+    const subjectBody = subjects.find((s) => {
+      return s.name === subject;
+    });
+    const professorBody = professors.find((p) => {
+      return p.name === professor;
+    });
 
     const body = {
       name,
       category,
       subjectId: subjectBody?.id,
       professorId: professorBody?.id,
-      url,
-    }
+      url
+    };
 
     return postExam(body)
       .then(() => {
@@ -92,78 +91,74 @@ const Register = () => {
   };
 
   return (
-    <PageStyle>
-      <h1>Insira as informações sobre a prova</h1>
-
-      <S.Form onSubmit={handleSubmit}>
-        <S.Input
-          required
-          placeholder="Nome"
-          type="text"
-          name="name"
-          value={inputFields.name}
-          onChange={handleChange}
-          minLength={3}
-          autoComplete="off"
-        />
-        <S.Select
-          value={inputFields.category}
-          name="category"
-          onChange={handleChange}
-          required
-        >
-          <option selected>--- Categorias ---</option>
-          {categories.map((category, index) => {
-            return (
-              <option key={index} value={category.toUpperCase()}>
-                {category}
-              </option>
-            );
-          })}
-        </S.Select>
-        <S.Select
-          value={inputFields.subject}
-          name="subject"
-          onChange={handleChange}
-          required
-        >
-          <option selected>--- Matérias ---</option>
-          {subjects.map((subject) => {
-            return (
-              <option key={subject.id} value={subject.name}>
-                {subject.name}
-              </option>
-            );
-          })}
-        </S.Select>
-        <S.Select
-          value={inputFields.professor}
-          name="professor"
-          onChange={handleChange}
-          required
-        >
-          <option selected>--- Professores ---</option>
-          {professors.map((professor) => {
-            return (
-              <option key={professor.id} value={professor.name}>
-                {professor.name}
-              </option>
-            );
-          })}
-        </S.Select>
-        <S.Input
-          required
-          placeholder="url da prova"
-          type="text"
-          name="url"
-          value={inputFields.url}
-          onChange={handleChange}
-          minLength={3}
-          autoComplete="off"
-        />
-        <S.Button type="submit">Cadastrar prova</S.Button>
-      </S.Form>
-    </PageStyle>
+    <S.Form onSubmit={handleSubmit}>
+      <S.Input
+        required
+        placeholder="Título"
+        type="text"
+        name="name"
+        value={inputFields.name}
+        onChange={handleChange}
+        minLength={3}
+        autoComplete="off"
+      />
+      <S.Select
+        value={inputFields.category}
+        name="category"
+        onChange={handleChange}
+        required
+      >
+        <option selected>Categorias</option>
+        {categories.map((category, index) => {
+          return (
+            <option key={index} value={category.toUpperCase()}>
+              {category}
+            </option>
+          );
+        })}
+      </S.Select>
+      <S.Select
+        value={inputFields.subject}
+        name="subject"
+        onChange={handleChange}
+        required
+      >
+        <option selected>Matérias</option>
+        {subjects.map((subject) => {
+          return (
+            <option key={subject.id} value={subject.name}>
+              {subject.name}
+            </option>
+          );
+        })}
+      </S.Select>
+      <S.Select
+        value={inputFields.professor}
+        name="professor"
+        onChange={handleChange}
+        required
+      >
+        <option selected>Professores</option>
+        {professors.map((professor) => {
+          return (
+            <option key={professor.id} value={professor.name}>
+              {professor.name}
+            </option>
+          );
+        })}
+      </S.Select>
+      <S.Input
+        required
+        placeholder="Url da prova"
+        type="text"
+        name="url"
+        value={inputFields.url}
+        onChange={handleChange}
+        minLength={3}
+        autoComplete="off"
+      />
+      <Button type="submit">Cadastrar prova</Button>
+    </S.Form>
   );
 };
 

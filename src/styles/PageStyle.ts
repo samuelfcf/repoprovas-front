@@ -1,18 +1,28 @@
 import styled from 'styled-components';
 
 const PageStyle = styled.div`
-  background-color: #333;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 `;
 
-const ButtonArea = styled.div`
+const Text = styled.h1`
+  color: #333;
+  padding-top: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: 'Lato', sans-serif;
+`;
+
+const OptionButtonsArea = styled.div`
   display: flex;
+  flex-direction: column;
+  margin-top: 20px;
   justify-content: space-between;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 30px;
 `;
 
 const Ul = styled.ul`
@@ -22,19 +32,41 @@ const Ul = styled.ul`
   gap: 10px;
 `;
 
-const Li = styled.li``;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
   padding-left: 20px;
-  background-color: red;
+  background-color: lightblue;
   width: 200px;
   height: 100px;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
 `;
 
-export { ButtonArea, Ul, Li, Container };
+const Button = styled.button`
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  background-color: lightblue;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
+`;
+
+export { Text, OptionButtonsArea, Ul, Container, Button };
 
 export default PageStyle;
