@@ -68,7 +68,7 @@ $ yarn start
 
 ```
 
-You can find an .env.example <a href="https://github.com/samuelfcf/samuelfcf/blob/main/.env.example">here</a>.
+You can find an .env.example <a href="https://github.com/samuelfcf/repoprovas-front/blob/main/.env.example">here</a>.
 
 ---
 
