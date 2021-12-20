@@ -1,46 +1,104 @@
-# Getting Started with Create React App
+<h1 align="center">
+    <a href="#"> RepoProvas 📚</a>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center"> 
+	 Status: In development
+</h4>
 
-## Available Scripts
+<p align="center">
+ <a href="#about">About</a> •
+ <a href="#layout">Layout</a> • 
+ <a href="#how-it-works">How it works</a> • 
+ <a href="#pre-requisites">Pre-requisites</a> • 
+ <a href="#tech-stack">Tech Stack</a> • 
+ <a href="#how-to-contribute">How to contribute</a> • 
+ <a href="#author">Author</a>
+</p>
 
-In the project directory, you can run:
+## About
 
-### `yarn start`
+Aiming to make you more elegant and safe, Atelie provides exclusive clothes for your look. You can browse our website and see all the products, which have pieces from sizes P to G. Seeking to ensure a good experience, when you complete your purchase, you will receive an email with all information about the products and payment method selected.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Layout
 
-### `yarn test`
+<div align="center">
+ <img src="./public/assets/apresentacao.gif" alt="App demonstration" />
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This layout was completely made by me :)
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How it works
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project is divided into two parts:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Backend (You can find here: https://github.com/samuelfcf/repoprovas-back)
+2. Frontend (This repository)
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Pre-requisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Before you begin, you will need to have the following tools installed on your machine:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [VSCode](https://code.visualstudio.com/).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Running the Frontend
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
 
-## Learn More
+# Clone this repository
+$ git clone https://github.com/samuelfcf/repoprovas-front
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Access the project folder cmd/terminal
+$ cd repoprovas-front
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Install the dependencies
+$ yarn install
+
+# If you want to run your app on localhost, create a .env file with the environment variable pointing to your local server.
+
+# Run the application in development mode
+$ yarn start
+
+# The server will start at port: 3000
+
+```
+
+You can find an .env.example <a href="https://github.com/samuelfcf/samuelfcf/blob/main/.env.example">here</a>.
+
+---
+
+## Tech Stack
+
+The following tools were used in the construction of the project:
+
+**Frontend** ([React](https://reactjs.org/))
+
+- **[Typescript](https://www.typescriptlang.org/)**
+- **[Axios](https://github.com/axios/axios)**
+- **[React-router-dom](https://github.com/remix-run/react-router)**
+- **[Styled-components](https://github.com/styled-components/styled-components)**
+- **[SweetAlert2](https://github.com/sweetalert2/sweetalert2)**
+- **[Eslint - Airbnb](https://github.com/airbnb/javascript)**
+- **[Prettier](https://github.com/prettier/prettier)**
+
+> See the file [package.json](https://github.com/samuelfcf/repoprovas-front/blob/main/package.json)
+
+---
+
+## How to contribute
+
+1. Fork the project.
+2. Create a new branch with your changes: `git checkout -b feat/myFeatureName`
+3. For each feature implemented, make a commit specifying what was done
+4. Submit your changes: `git push -u origin feat/myFeatureName`
+
+---
+
+## Author
+
+Developed with ❤️ by Samuel Felipe Castro Fernandes.
