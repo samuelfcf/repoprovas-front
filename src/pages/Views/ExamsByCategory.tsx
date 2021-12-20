@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import styled from 'styled-components';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ExamContainer from '../../components/ExamContainer';
 import PageStyle, { Text } from '../../styles/PageStyle';
 import { Exam } from '../../types/Exam';
 
 const ExamsByCategory = () => {
   const { state } = useLocation();
+  const { exams, subject, professors } = state;
   const categories = ['P1', 'P2', 'P3', 'Final'];
 
   const renderExams = (category: string) => {
     const renderArray: Exam[] = [];
-    const { exams, subject, professors } = state;
-    console.log(professors);
+
     exams.forEach((exam: Exam) => {
       if (exam.category.toLowerCase() === category.toLowerCase()) {
         renderArray.push(exam);

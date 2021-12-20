@@ -38,20 +38,4 @@ const Select = styled.select`
   color: #8d8d8d;
 `;
 
-const Button = styled.button`
-  width: 100%;
-  height: 30px;
-  padding: 0 5px;
-  border: 1px solid lightblue;
-  border-radius: 5px;
-  background-color: lightblue;
-  color: black;
-  cursor: pointer;
-
-  &:hover {
-    background-color: blue;
-    color: white;
-  }
-`;
-
-export { Form, Input, Select, Button };
+export { Form, Input, Select };

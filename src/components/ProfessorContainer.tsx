@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Exam } from '../types/Exam';
 import Subject from '../types/Subject';
-import { Li, Container } from '../styles/PageStyle';
+import { Container } from '../styles/PageStyle';
 
 interface Props {
   name: string;
@@ -14,18 +14,16 @@ const ProfessorContainer = ({ name, subject, exams }: Props) => {
   const navigate = useNavigate();
 
   return (
-    <Li
+    <Container
       onClick={() => {
         navigate(`/exams/`, {
           state: { exams, subject: subject.name, professors: [name] }
         });
       }}
     >
-      <Container>
-        <p>Prof: {name}</p>
-        <p>Quantidade de provas: {exams.length}</p>
-      </Container>
-    </Li>
+      <p>Prof: {name}</p>
+      <p>Quantidade de provas: {exams.length}</p>
+    </Container>
   );
 };
 

@@ -32,8 +32,6 @@ const Ul = styled.ul`
   gap: 10px;
 `;
 
-const Li = styled.li``;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,6 +51,22 @@ const Container = styled.div`
   }
 `;
 
-export { Text, OptionButtonsArea, Ul, Li, Container };
+const Button = styled.button`
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  background-color: lightblue;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
+`;
+
+export { Text, OptionButtonsArea, Ul, Container, Button };
 
 export default PageStyle;

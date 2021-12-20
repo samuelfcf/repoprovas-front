@@ -1,8 +1,7 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { OptionButtonsArea, Text } from '../../styles/PageStyle';
-import { Button } from '../Register/style';
+import { OptionButtonsArea, Text, Button } from '../../styles/PageStyle';
 
 const Views = () => {
   const navigate = useNavigate();

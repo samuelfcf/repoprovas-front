@@ -1,16 +1,11 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable prettier/prettier */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
-import PageStyle from '../../styles/PageStyle';
+import { Button } from '../../styles/PageStyle';
 import { getAllProfessors, getAllSubjects, postExam } from '../../services/api';
 import { modalError, modalWarning, modalSuccess } from '../../utils/modals';
 import { Exam } from '../../types/Exam';
 import Professor from '../../types/Professor';
 import Subject from '../../types/Subject';
-
 
 const Register = () => {
   const categories = ['P1', 'P2', 'P3', 'Final'];
@@ -71,16 +66,20 @@ const Register = () => {
       return modalWarning('Preencha todos os campos!');
     }
 
-    const subjectBody = subjects.find(s => s.name === subject)
-    const professorBody = professors.find(p => p.name === professor)
+    const subjectBody = subjects.find((s) => {
+      return s.name === subject;
+    });
+    const professorBody = professors.find((p) => {
+      return p.name === professor;
+    });
 
     const body = {
       name,
       category,
       subjectId: subjectBody?.id,
       professorId: professorBody?.id,
-      url,
-    }
+      url
+    };
 
     return postExam(body)
       .then(() => {
@@ -158,7 +157,7 @@ const Register = () => {
         minLength={3}
         autoComplete="off"
       />
-      <S.Button type="submit">Cadastrar prova</S.Button>
+      <Button type="submit">Cadastrar prova</Button>
     </S.Form>
   );
 };

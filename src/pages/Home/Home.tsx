@@ -1,32 +1,28 @@
-/* eslint-disable no-nested-ternary */
-/* eslint-disable arrow-body-style */
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import PageStyle from '../../styles/PageStyle';
 import Register from '../Register/Register';
 import Views from '../Views/Views';
 import * as S from './style';
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [firstTime, setFirsTime] = useState(true);
+  const [firstTime, setFirstTime] = useState(true);
   const [renderForm, setRenderForm] = useState(false);
   const [renderViews, setRenderViews] = useState(false);
 
   const renderRegisterForm = () => {
     if (!firstTime) {
-      setFirsTime(true);
+      setFirstTime(true);
     }
-    setFirsTime(false);
+    setFirstTime(false);
     setRenderViews(false);
     setRenderForm(true);
   };
 
   const renderViewsOptions = () => {
     if (!firstTime) {
-      setFirsTime(true);
+      setFirstTime(true);
     }
-    setFirsTime(false);
+    setFirstTime(false);
     setRenderViews(true);
     setRenderForm(false);
   };

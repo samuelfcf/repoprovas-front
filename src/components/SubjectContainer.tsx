@@ -17,8 +17,6 @@ const SubjectContainer = ({ subject }: Props) => {
     return exam.professor.name;
   });
 
-  const professorsNames = [...new Set(professors)];
-
   return (
     <Container
       onClick={() => {
