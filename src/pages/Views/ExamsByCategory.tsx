@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import ExamContainer from '../../components/ExamContainer';
-import PageStyle, { Text } from '../../styles/PageStyle';
+import PageStyle, { Text, Header } from '../../styles/PageStyle';
 import { Exam } from '../../types/Exam';
 
 const ExamsByCategory = () => {
@@ -38,7 +38,9 @@ const ExamsByCategory = () => {
 
   return (
     <PageStyle>
-      <Text>Provas</Text>
+      <Header>
+        <Text>Provas</Text>
+      </Header>
 
       <Ul>
         {categories.map((category, index) => {

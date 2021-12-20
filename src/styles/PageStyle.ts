@@ -8,6 +8,21 @@ const PageStyle = styled.div`
   gap: 30px;
 `;
 
+const Header = styled.header`
+  background-color: darkblue;
+  height: 100px;
+  width: 100vw;
+  text-align: center;
+
+  h1 {
+    color: #fff;
+    padding-top: 30px;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+  }
+`;
+
 const Text = styled.h1`
   color: #333;
   padding-top: 30px;
@@ -67,6 +82,11 @@ const Button = styled.button`
   }
 `;
 
-export { Text, OptionButtonsArea, Ul, Container, Button };
+const Title = styled.h1`
+  font-weight: 600;
+  display: inline;
+`;
+
+export { Text, OptionButtonsArea, Ul, Container, Button, Title, Header };
 
 export default PageStyle;

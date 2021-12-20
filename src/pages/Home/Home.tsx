@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PageStyle from '../../styles/PageStyle';
+import PageStyle, { Header } from '../../styles/PageStyle';
 import Register from '../Register/Register';
 import Views from '../Views/Views';
 import * as S from './style';
@@ -29,9 +29,9 @@ const Home = () => {
 
   return (
     <PageStyle>
-      <S.Header>
+      <Header>
         <h1> Bem vindo ao RepoProvas</h1>
-      </S.Header>
+      </Header>
 
       <S.ButtonArea>
         <S.Button type="submit" onClick={renderRegisterForm}>

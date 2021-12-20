@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllProfessors } from '../../services/api';
 import Professor from '../../types/Professor';
 import ProfessorContainer from '../../components/ProfessorContainer';
-import PageStyle, { Ul, Text } from '../../styles/PageStyle';
+import PageStyle, { Ul, Text, Header } from '../../styles/PageStyle';
 
 const ExamsByProfessor = () => {
   const [professors, setProfessors] = useState<Professor[]>([]);
@@ -15,7 +15,10 @@ const ExamsByProfessor = () => {
 
   return (
     <PageStyle>
-      <Text>Professores</Text>
+      <Header>
+        <Text>Professores</Text>
+      </Header>
+
       <Ul>
         {professors.map((professor) => {
           return (

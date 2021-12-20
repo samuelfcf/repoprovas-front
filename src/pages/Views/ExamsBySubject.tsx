@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllSubjects } from '../../services/api';
 import Subject from '../../types/Subject';
-import PageStyle, { Ul, Text } from '../../styles/PageStyle';
+import PageStyle, { Ul, Text, Header } from '../../styles/PageStyle';
 import SubjectContainer from '../../components/SubjectContainer';
 
 const ExamsBySubject = () => {
@@ -30,7 +30,9 @@ const ExamsBySubject = () => {
 
   return (
     <PageStyle>
-      <Text>Períodos</Text>
+      <Header>
+        <Text>Períodos</Text>
+      </Header>
 
       {periods.map((p: string) => {
         return (
