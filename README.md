@@ -18,7 +18,7 @@
 
 ## About
 
-Aiming to make you more elegant and safe, Atelie provides exclusive clothes for your look. You can browse our website and see all the products, which have pieces from sizes P to G. Seeking to ensure a good experience, when you complete your purchase, you will receive an email with all information about the products and payment method selected.
+Here you can register and find old proofs of the basic disciplines of engineering courses, enjoy!
 
 ---
 
