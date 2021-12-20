@@ -92,78 +92,74 @@ const Register = () => {
   };
 
   return (
-    <PageStyle>
-      <h1>Insira as informações sobre a prova</h1>
-
-      <S.Form onSubmit={handleSubmit}>
-        <S.Input
-          required
-          placeholder="Nome"
-          type="text"
-          name="name"
-          value={inputFields.name}
-          onChange={handleChange}
-          minLength={3}
-          autoComplete="off"
-        />
-        <S.Select
-          value={inputFields.category}
-          name="category"
-          onChange={handleChange}
-          required
-        >
-          <option selected>--- Categorias ---</option>
-          {categories.map((category, index) => {
-            return (
-              <option key={index} value={category.toUpperCase()}>
-                {category}
-              </option>
-            );
-          })}
-        </S.Select>
-        <S.Select
-          value={inputFields.subject}
-          name="subject"
-          onChange={handleChange}
-          required
-        >
-          <option selected>--- Matérias ---</option>
-          {subjects.map((subject) => {
-            return (
-              <option key={subject.id} value={subject.name}>
-                {subject.name}
-              </option>
-            );
-          })}
-        </S.Select>
-        <S.Select
-          value={inputFields.professor}
-          name="professor"
-          onChange={handleChange}
-          required
-        >
-          <option selected>--- Professores ---</option>
-          {professors.map((professor) => {
-            return (
-              <option key={professor.id} value={professor.name}>
-                {professor.name}
-              </option>
-            );
-          })}
-        </S.Select>
-        <S.Input
-          required
-          placeholder="url da prova"
-          type="text"
-          name="url"
-          value={inputFields.url}
-          onChange={handleChange}
-          minLength={3}
-          autoComplete="off"
-        />
-        <S.Button type="submit">Cadastrar prova</S.Button>
-      </S.Form>
-    </PageStyle>
+    <S.Form onSubmit={handleSubmit}>
+      <S.Input
+        required
+        placeholder="Título"
+        type="text"
+        name="name"
+        value={inputFields.name}
+        onChange={handleChange}
+        minLength={3}
+        autoComplete="off"
+      />
+      <S.Select
+        value={inputFields.category}
+        name="category"
+        onChange={handleChange}
+        required
+      >
+        <option selected>Categorias</option>
+        {categories.map((category, index) => {
+          return (
+            <option key={index} value={category.toUpperCase()}>
+              {category}
+            </option>
+          );
+        })}
+      </S.Select>
+      <S.Select
+        value={inputFields.subject}
+        name="subject"
+        onChange={handleChange}
+        required
+      >
+        <option selected>Matérias</option>
+        {subjects.map((subject) => {
+          return (
+            <option key={subject.id} value={subject.name}>
+              {subject.name}
+            </option>
+          );
+        })}
+      </S.Select>
+      <S.Select
+        value={inputFields.professor}
+        name="professor"
+        onChange={handleChange}
+        required
+      >
+        <option selected>Professores</option>
+        {professors.map((professor) => {
+          return (
+            <option key={professor.id} value={professor.name}>
+              {professor.name}
+            </option>
+          );
+        })}
+      </S.Select>
+      <S.Input
+        required
+        placeholder="Url da prova"
+        type="text"
+        name="url"
+        value={inputFields.url}
+        onChange={handleChange}
+        minLength={3}
+        autoComplete="off"
+      />
+      <S.Button type="submit">Cadastrar prova</S.Button>
+    </S.Form>
   );
 };
 

@@ -1,18 +1,28 @@
 import styled from 'styled-components';
 
 const PageStyle = styled.div`
-  background-color: #333;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 `;
 
-const ButtonArea = styled.div`
+const Text = styled.h1`
+  color: #333;
+  padding-top: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: 'Lato', sans-serif;
+`;
+
+const OptionButtonsArea = styled.div`
   display: flex;
+  flex-direction: column;
+  margin-top: 20px;
   justify-content: space-between;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 30px;
 `;
 
 const Ul = styled.ul`
@@ -30,11 +40,19 @@ const Container = styled.div`
   justify-content: center;
   gap: 5px;
   padding-left: 20px;
-  background-color: red;
+  background-color: lightblue;
   width: 200px;
   height: 100px;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
 `;
 
-export { ButtonArea, Ul, Li, Container };
+export { Text, OptionButtonsArea, Ul, Li, Container };
 
 export default PageStyle;

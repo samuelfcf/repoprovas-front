@@ -16,7 +16,7 @@ const ProfessorContainer = ({ name, subject, exams }: Props) => {
   return (
     <Li
       onClick={() => {
-        navigate('/exams', {
+        navigate(`/exams/`, {
           state: { exams, subject: subject.name, professors: [name] }
         });
       }}

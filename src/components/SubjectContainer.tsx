@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Li, Container } from '../styles/PageStyle';
+import { Container } from '../styles/PageStyle';
 import Subject from '../types/Subject';
 
 interface Props {
@@ -20,18 +20,16 @@ const SubjectContainer = ({ subject }: Props) => {
   const professorsNames = [...new Set(professors)];
 
   return (
-    <Li
+    <Container
       onClick={() => {
         navigate('/exams', {
-          state: { exams, subject: subject.name, professors: professorsNames }
+          state: { exams, subject: subject.name, professors }
         });
       }}
     >
-      <Container>
-        <p>Matéria: {`${subject.name}`}</p>
-        <p>Quantidade de provas: {`${subject.exams.length}`}</p>
-      </Container>
-    </Li>
+      <p>Matéria: {`${subject.name}`}</p>
+      <p>Quantidade de provas: {`${subject.exams.length}`}</p>
+    </Container>
   );
 };
 

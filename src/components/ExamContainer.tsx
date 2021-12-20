@@ -28,7 +28,7 @@ const ExamContainer = ({ exam, subject, professor }: Props) => {
 };
 
 const Container = styled.div`
-  background-color: blue;
+  background-color: lightblue;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -43,6 +43,11 @@ const Container = styled.div`
 
   a {
     color: black;
+    height: 20px;
+
+    &:hover {
+      color: white;
+    }
   }
 `;
 
